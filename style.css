@@ -1,4 +1,4 @@
-/* Definições básicas para a página (MANTIDAS) */
+/* Definições básicas para a página */
 body {
     margin: 0;
     padding: 0;
@@ -8,27 +8,28 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow-y: auto;
+    overflow-y: auto; 
 }
 
-/* Fundo de Vídeo (MANTIDAS) */
+/* Fundo de Vídeo */
 .background-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -2;
-    background-color: #4b0082;
+    z-index: -2; 
+    background-color: #4b0082; /* Cor de fallback (roxo escuro) */
 }
 
 #video-bg {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    opacity: 0.7;
+    opacity: 0.7; /* Suaviza o vídeo para o texto ficar legível */
 }
 
+/* Overlay Escuro para Legibilidade */
 .background-container::after {
     content: '';
     position: absolute;
@@ -36,31 +37,31 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.4); /* Adiciona uma camada escura sobre o vídeo */
     z-index: -1;
 }
 
-/* Contêiner principal do perfil (MANTIDAS) */
+/* Contêiner principal do perfil (o cartão roxo) */
 .profile-container {
     padding: 20px;
-    background-color: rgba(75, 0, 130, 0.7);
+    background-color: rgba(75, 0, 130, 0.7); /* Roxo com transparência */
     border-radius: 20px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px); /* Efeito de vidro fosco */
     -webkit-backdrop-filter: blur(10px);
     width: 90%;
-    max-width: 400px;
+    max-width: 400px; 
     text-align: center;
-    margin: 40px 0;
+    margin: 40px 0; 
 }
 
-/* Avatar e Username (MANTIDAS) */
+/* Estilo do Avatar */
 .avatar-wrapper {
     position: relative;
     display: inline-block;
     border-radius: 50%;
     padding: 5px;
-    background-color: white;
+    background-color: white; 
 }
 .avatar {
     width: 100px;
@@ -76,51 +77,44 @@ body {
     text-shadow: 0 0 5px #000000;
 }
 
-/* **NOVOS ESTILOS PARA O PLAYER** */
+/* **ESTILOS PARA O PLAYER DE MÚSICA** */
 .music-player {
     background-color: rgba(255, 255, 255, 0.1);
     padding: 15px;
     margin-bottom: 25px;
     border-radius: 10px;
 }
-
 .track-info {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
     text-align: left;
 }
-
 .album-art {
     width: 50px;
     height: 50px;
     border-radius: 5px;
     margin-right: 10px;
 }
-
 .track-details {
     flex-grow: 1;
 }
-
 .artist-name {
     font-size: 0.9em;
     font-weight: bold;
     margin: 0;
 }
-
 .song-title {
     font-size: 0.8em;
     margin: 0;
     color: #ccc;
 }
-
 .controls-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 10px;
 }
-
 .control-btn {
     background-color: #9370DB; /* Roxo Médio */
     color: white;
@@ -132,11 +126,9 @@ body {
     font-size: 1.1em;
     transition: background-color 0.2s;
 }
-
 .control-btn:hover {
     background-color: #8A2BE2; /* Roxo Mais Escuro */
 }
-
 #volumeSlider {
     flex-grow: 1;
     -webkit-appearance: none;
@@ -146,7 +138,6 @@ body {
     border-radius: 5px;
     cursor: pointer;
 }
-
 #volumeSlider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
@@ -157,23 +148,43 @@ body {
     cursor: pointer;
 }
 
-#volumeSlider::-moz-range-thumb {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background: #9370DB;
-    cursor: pointer;
+/* **ESTILOS PARA O OVERLAY** */
+.welcome-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.95); /* Fundo muito escuro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Garante que fique acima de tudo */
+    transition: opacity 0.5s ease;
 }
-/* FIM NOVOS ESTILOS */
 
+.start-button {
+    padding: 15px 30px;
+    background-color: #9370DB; /* Roxo */
+    color: white;
+    border: 2px solid white;
+    border-radius: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
-/* Links (Botões) - MANTIDAS */
+.start-button:hover {
+    background-color: #8A2BE2;
+}
+
+/* Links (Botões) */
 .links-container {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
-
 .social-link {
     display: block;
     padding: 15px;
@@ -184,17 +195,16 @@ body {
     transition: transform 0.2s, background-color 0.2s;
     background-color: rgba(255, 255, 255, 0.2);
 }
-
 .social-link:hover {
     transform: translateY(-2px);
     background-color: rgba(255, 255, 255, 0.3);
 }
-
 .social-link i {
     margin-right: 10px;
     font-size: 1.2em;
 }
 
+/* Cores específicas dos links */
 .instagram { background-color: #E1306C; }
 .instagram:hover { background-color: #c13584; }
 .discord { background-color: #5865F2; }
@@ -202,7 +212,7 @@ body {
 .tiktok { background-color: #000000; }
 .tiktok:hover { background-color: #222222; }
 
-/* Media Query (MANTIDAS) */
+/* Media Query */
 @media (max-width: 600px) {
     .username {
         font-size: 1.5em;
