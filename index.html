@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    
+    <div id="welcomeOverlay" class="welcome-overlay">
+        <button id="startButton" class="start-button">CLIQUE PARA ENTRAR (Inicia a Música)</button>
+    </div>
+
     <div class="background-container">
         <video autoplay muted loop id="video-bg">
             <source src="purple-knight.mp4" type="video/mp4">
@@ -23,7 +28,7 @@
         <h1 class="username">domingotesx</h1>
 
         <div class="music-player">
-            <audio id="myAudio" loop autoplay muted>
+            <audio id="myAudio" loop>
                 <source src="Masego + FKJ - Tadow [zwf5MpcuKDM].mp3" type="audio/mp3">
                 Seu navegador não suporta o elemento de áudio.
             </audio>
@@ -37,7 +42,7 @@
             </div>
 
             <div class="controls-row">
-                <button id="playPauseBtn" class="control-btn"><i class="fas fa-pause"></i></button>
+                <button id="playPauseBtn" class="control-btn"><i class="fas fa-play"></i></button>
 
                 <i class="fas fa-volume-down"></i>
                 <input type="range" id="volumeSlider" min="0" max="1" step="0.05" value="0.5">
