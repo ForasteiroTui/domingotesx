@@ -1,0 +1,213 @@
+/* Definições básicas para a página (MANTIDAS) */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-y: auto;
+}
+
+/* Fundo de Vídeo (MANTIDAS) */
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    background-color: #4b0082;
+}
+
+#video-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+}
+
+.background-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: -1;
+}
+
+/* Contêiner principal do perfil (MANTIDAS) */
+.profile-container {
+    padding: 20px;
+    background-color: rgba(75, 0, 130, 0.7);
+    border-radius: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    margin: 40px 0;
+}
+
+/* Avatar e Username (MANTIDAS) */
+.avatar-wrapper {
+    position: relative;
+    display: inline-block;
+    border-radius: 50%;
+    padding: 5px;
+    background-color: white;
+}
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+.username {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 10px 0 20px 0;
+    text-shadow: 0 0 5px #000000;
+}
+
+/* **NOVOS ESTILOS PARA O PLAYER** */
+.music-player {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+}
+
+.track-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.album-art {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.track-details {
+    flex-grow: 1;
+}
+
+.artist-name {
+    font-size: 0.9em;
+    font-weight: bold;
+    margin: 0;
+}
+
+.song-title {
+    font-size: 0.8em;
+    margin: 0;
+    color: #ccc;
+}
+
+.controls-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.control-btn {
+    background-color: #9370DB; /* Roxo Médio */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.2s;
+}
+
+.control-btn:hover {
+    background-color: #8A2BE2; /* Roxo Mais Escuro */
+}
+
+#volumeSlider {
+    flex-grow: 1;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 5px;
+    background: #555;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#volumeSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #9370DB;
+    cursor: pointer;
+}
+
+#volumeSlider::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #9370DB;
+    cursor: pointer;
+}
+/* FIM NOVOS ESTILOS */
+
+
+/* Links (Botões) - MANTIDAS */
+.links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.social-link {
+    display: block;
+    padding: 15px;
+    border-radius: 12px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: transform 0.2s, background-color 0.2s;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.social-link:hover {
+    transform: translateY(-2px);
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.social-link i {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.instagram { background-color: #E1306C; }
+.instagram:hover { background-color: #c13584; }
+.discord { background-color: #5865F2; }
+.discord:hover { background-color: #4752c4; }
+.tiktok { background-color: #000000; }
+.tiktok:hover { background-color: #222222; }
+
+/* Media Query (MANTIDAS) */
+@media (max-width: 600px) {
+    .username {
+        font-size: 1.5em;
+    }
+    .social-link {
+        padding: 12px;
+    }
+}
